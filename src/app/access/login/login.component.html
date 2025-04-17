@@ -1,0 +1,28 @@
+<div styleClass="ui-card-shadow">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="username">Username</label>
+      <input id="username" type="text" pInputText [(ngModel)]="username"/>
+    </div>
+    <div class="p-field">
+      <label for="password">Password</label>
+      <input id="password" type="password" pInputText [(ngModel)]="password" />
+    </div>
+    <div class="p-field">
+      <button pButton type="button" label="Login" (click)="login()"></button>
+    </div>
+  </div>
+</div>
+
+
+<ul>
+  @for( datas of data; track datas){
+
+    <li>{{datas.id}}</li>
+    <li>{{datas.name}}</li>
+
+  }
+
+</ul>
+
+<button (click)="getbehaviourdata()">get value</button>

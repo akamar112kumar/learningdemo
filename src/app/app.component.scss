@@ -1,0 +1,7 @@
+::ng-deep * {  
+    margin: 0;
+    padding: 0;
+  }
+  ::ng-deep .height{
+    min-height: calc(100vh - 177px) !important;
+  }

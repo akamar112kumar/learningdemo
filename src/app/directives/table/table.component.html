@@ -1,0 +1,61 @@
+<div appTablestyle>
+    {{ varibeltocheck | firstLetterCaptital}}
+  </div>
+
+
+  <!-- <table border="1" cellpadding="5" cellspacing="2" width="50%">
+    <thead>
+        <tr>
+          <td>first name</td>
+          <td>gender</td>
+          <td>last name</td>
+        </tr>
+    </thead>
+    <tbody>
+    @for (name of nameList.names; track name){
+    
+    <tr>
+      <td>{{ name.firstName }}</td>
+      <td>{{name.gender | firstLetterCaptital | gender}}</td>
+      <td><strong>{{ name.lastName | firstLetterCaptital }}</strong></td>
+    </tr>
+    }
+</tbody>
+  </table> -->
+
+  <div class="card">
+    <p-table 
+    [paginator]="true"
+    [rows]="3"
+    [rowsPerPageOptions]="[3, 6, 9]"
+    [value]="nameList.names" showGridlines [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template #header>
+            <tr>
+              <th>first name</th>
+              <th>gender</th>
+              <th>last name</th>
+              <th>score</th>
+              <th>employee</th>
+              <th>remark</th>
+            </tr>
+        </ng-template>
+        "firstName": "raushni",
+        "lastName": "kumari",
+        "score": 100,
+        "remark": "good",
+        "emp": "emp10",
+        "gender": "F"
+      <ng-template #body let-name>
+        <tr>
+          <td>{{ name.firstName | firstLetterCaptital }}</td>
+          <td>{{name.gender | firstLetterCaptital | gender}}</td>
+          <td>{{ name.lastName | firstLetterCaptital }}</td>
+          <td appTablestyle>{{ name.score }}</td>
+          <td>{{ name.emp }}</td>
+          <td>{{ name.remark }}</td>
+        </tr>
+
+        </ng-template>
+      
+    </p-table>
+</div>
