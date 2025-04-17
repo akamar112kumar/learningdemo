@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "emp": "oo1",
+      "name": "Jane",
+      "username": "amar",
+      "password": "kumar"
+    },
+    {
+      "id": "2",
+      "name": "Doe",
+      "emp": "oo2",
+      "username": "rohini",
+      "password": "kumari"
+    }
+  ],
+  "register": [
+    {
+      "id": "1",
+      "emp": "oo1",
+      "fullName": "Jane",
+      "email": "jane@gmail.com",
+      "Username": "amar",
+      "password": "kumar",
+      "c_password": "kumar"
+    },
+    {
+      "id": "1857"
+    }
+  ]
+}
