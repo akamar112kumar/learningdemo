@@ -4,12 +4,14 @@ import { DecoratorsComponent } from './decorators/decorators.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { AnotationComponent } from './anotation/anotation.component';
 import { LearnComponent } from './learn/learn.component';
+import { SignalsComponent } from './signals/signals.component';
 
 const routes: Routes = [
   {path:'',component:LearnComponent},
   {path:'study/decorater',
     component:DecoratorsComponent
   },
+  {path:'study/signals', component:SignalsComponent},
   {path:'study/pipe',
     component:PipeComponent
   },
