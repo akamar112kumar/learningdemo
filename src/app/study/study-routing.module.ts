@@ -5,6 +5,7 @@ import { PipeComponent } from './pipe/pipe.component';
 import { AnotationComponent } from './anotation/anotation.component';
 import { LearnComponent } from './learn/learn.component';
 import { SignalsComponent } from './signals/signals.component';
+import { ArrowFComponent } from './arrow-f/arrow-f.component';
 
 const routes: Routes = [
   {path:'',component:LearnComponent},
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {path:'study/anotation',
     component:AnotationComponent
+  },
+  {path:'study/arrow',
+    component:ArrowFComponent
   }
 ];
 
