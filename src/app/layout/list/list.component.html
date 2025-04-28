@@ -1,4 +1,4 @@
-<p>update works!</p>
+
 
 <button (click)="getdateforupdate()">get data</button>
 <div class="card">
@@ -24,7 +24,9 @@
           <td>{{ data.username | firstLetterCaptital }}</td>
           <td>{{data.email}}</td>
           <td appTablestyle>{{ data.password }}</td>
-          <td><button><a [routerLink]="['/update', data.id]">Edit</a></button><button>Create</button><button>{{data.id}}</button></td>
+        
+          <td><button>Update</button><button>Create</button><button>{{data.id}}</button></td>
+
         </tr>
 
         </ng-template>

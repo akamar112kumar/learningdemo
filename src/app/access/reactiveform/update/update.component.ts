@@ -7,11 +7,13 @@ import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router, RouterLink } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-update',
-  imports: [FirstLetterCaptitalPipe,TableModule, CommonModule,],
+  imports: [FirstLetterCaptitalPipe,TableModule, CommonModule,RouterLink],
   templateUrl: './update.component.html',
   styleUrl: './update.component.scss'
 })
@@ -19,7 +21,7 @@ export class UpdateComponent implements OnInit {
 data = [];
 dataform:any;
  userForm: FormGroup | undefined;
-  constructor(private update:ReactiveFormService, private fb: FormBuilder, private http: HttpClient){
+  constructor(private update:ReactiveFormService, private fb: FormBuilder, private http: HttpClient,private router: Router){
     
   }
   ngOnInit(): void {
@@ -33,14 +35,6 @@ this.data = post;
 // this.dataform.controls['email'].setValue(post.email);
 // this.dataform.controls['password'].setValue(post.password);
     });
-
-   
-     
-
-
-    
-
-
   }
 
   // this.employeeForm.controls['EmpName'].setValue(employee.EmpName);  

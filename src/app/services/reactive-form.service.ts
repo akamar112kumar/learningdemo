@@ -12,6 +12,11 @@ url = 'http://localhost:3000';
   getPosts(): Observable<any> {
     return this.http.get(`${this.url}/register`);
     }
+
+
+
+  
+  
   
   show(){
     console.log(this.url)
