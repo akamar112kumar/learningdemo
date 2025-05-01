@@ -10,6 +10,8 @@ import { ChildComponent } from './component/child/child.component';
 import { RxjsComponent } from './component/rxjs/rxjs.component';
 import { ReactiveComponent } from './access/reactive/reactive.component';
 import { DecoratorsComponent } from './study/decorators/decorators.component';
+import { UpdateComponent } from './access/reactiveform/update/update.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,6 +25,8 @@ export const routes: Routes = [
 {path: 'child', component:ChildComponent},
 {path:'rxjs', component:RxjsComponent},
 {path:'Reactive', component:ReactiveComponent},
+{path:'update/:id', component:UpdateComponent},
+{path:'forms', loadChildren:()=>import('./forms/formsmodules/formsmodules.module').then(f=>f.FormsmodulesModule)},
 {
     path:'study',
     loadChildren:()=>import('./study/study.module').then(m=>m.StudyModule)
