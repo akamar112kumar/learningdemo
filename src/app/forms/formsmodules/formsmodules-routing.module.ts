@@ -7,7 +7,7 @@ import { EditComponent } from '../edit/edit.component';
 import { FormComponent } from '../form/form.component';
 
 const routes: Routes = [
-  {path:'', component:RegistrationComponent},
+  {path:'', component:LoginComponent},
   {path:'registration', component:RegistrationComponent},
   {path:'loging', component:LoginComponent},
   {path:'edit', component:EditComponent},
