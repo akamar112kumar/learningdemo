@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
-  selector: 'app-reactive',
+  selector: 'app-form',
   imports: [ReactiveFormsModule, PanelModule],
-  templateUrl: './reactive.component.html',
-  styleUrl: './reactive.component.scss'
+  templateUrl: './form.component.html',
+  styleUrl: './form.component.scss'
 })
-export class ReactiveComponent {
-  url = "http://localhost:3000/register";
+export class FormComponent {
+url = "http://localhost:3000/register";
   text: any = [];
   id: any;
   data: any;

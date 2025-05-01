@@ -1,0 +1,35 @@
+
+
+<button (click)="getdateforupdate()">get data</button>
+<div class="card">
+    <p-table 
+    [paginator]="true"
+    [rows]="3"
+    [rowsPerPageOptions]="[3, 6, 9]"
+    [value]="data" showGridlines [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template #header>
+            <tr>
+              <th>emplyee id</th>
+              <th>fullName</th>
+              <th>username</th>
+              <th>email</th>
+              <th>Password</th>
+              <th>Action</th>
+            </tr>
+        </ng-template>
+      <ng-template #body let-data>
+        <tr>
+          <td>{{ data.id | firstLetterCaptital }}</td>
+          <td>{{data.fullName | firstLetterCaptital}}</td>
+          <td>{{ data.username | firstLetterCaptital }}</td>
+          <td>{{data.email}}</td>
+          <td appTablestyle>{{ data.password }}</td>
+        
+          <td><button>Update</button><button>Create</button><button>{{data.id}}</button></td>
+
+        </tr>
+
+        </ng-template>
+      
+    </p-table>
+</div>

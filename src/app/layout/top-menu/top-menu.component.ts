@@ -162,7 +162,21 @@ showloginvalue(){
             routerLinkActive: 'active',
             ariaCurrentWhenActive: 'page',
             label: 'study',
+        },
+        {
+            routerLink: '/update/:id',
+            routerLinkActive: 'active',
+            ariaCurrentWhenActive: 'page',
+            label: 'update',
+        },
+        {
+            routerLink: 'forms',
+            routerLinkActive: 'active',
+            ariaCurrentWhenActive: 'page',
+            label: 'forms',
         }
+
+        
       ]
     }
      
