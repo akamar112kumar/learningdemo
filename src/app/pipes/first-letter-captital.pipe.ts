@@ -10,5 +10,4 @@ export class FirstLetterCaptitalPipe implements PipeTransform {
     if (!value) return value;
     return value.replace(/\b\w/g, first => first.toLocaleUpperCase());
   }
-
 }
