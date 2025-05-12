@@ -3,6 +3,7 @@ import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-form',
@@ -17,8 +18,9 @@ url = "http://localhost:3000/register";
   data: any;
   data1: any=[];
   userForm: FormGroup;
+  datalist:any;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private book:BooksService) {
     this.userForm = this.fb.group({
       fullName: ['', Validators.required],
       username: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
@@ -50,7 +52,6 @@ url = "http://localhost:3000/register";
      console.error('Error submitting form', error);
      });
      }
-    
 
 
 }

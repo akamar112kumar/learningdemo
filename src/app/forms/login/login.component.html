@@ -61,10 +61,8 @@
 </section>
 
 <div>
-    @for(list of resultdatalist; track list){
-        <li>{{list.username}}</li>
-        <li>{{list.password}}</li>
+    @for(list of data; track list){
+        <li>name : {{list.username}}</li>
+        <li>title: {{list.password}}</li>
     }
 </div>
-
- <button (click)="dataget()"> getdata</button>

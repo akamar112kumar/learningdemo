@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { PanelModule } from 'primeng/panel';
 import { Router } from '@angular/router';
 import { BooksService } from '../../services/books.service';
+import { subscribe } from 'node:diagnostics_channel';
 
 @Component({
   selector: 'app-login',
@@ -17,13 +18,16 @@ export class LoginComponent implements OnInit{
   username: string = '';
   password: string = '';
   resultdatalist:any;
+
+  datalist:any;
+
+  data:any
   constructor(private fb:FormBuilder, private router: Router,private booklist:BooksService, private http:HttpClient){
    
   }
 
 
   ngOnInit() {
-    this.dataget();
     this.userForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -43,18 +47,23 @@ export class LoginComponent implements OnInit{
     // }
 
 
-
+    this.booklist.getlogin().subscribe((res)=>
+    this.datalist = res)
 
     
-//     const loginData = { username: this.username, password: this.password };
-//     this.http.post('http://localhost:3000/login', loginData).subscribe(response => {
-//     if (response['status'] === 'success') {
-//      alert('Login successful!');
-//     } else {
-//      alert('Invalid username or password.');
-// }
-// });
-    
+    if (this.userForm.valid) {
+        const headers = new HttpHeaders().set('X-API-KEY', this.datalist);
+        this.http.post('YOUR_API_ENDPOINT', this.userForm.value, { headers }).subscribe(
+            response => {
+                // Handle successful login
+                console.log('Login successful', response);
+            },
+            error => {
+                // Handle login error
+                console.error('Login failed', error);
+            }
+        );
+    }
 
 
 
@@ -63,18 +72,7 @@ export class LoginComponent implements OnInit{
 
   }
 
-  dataget(){
-    this.booklist.getlogin().subscribe((res)=>{
-      if(res.status){
-        console.log("great");
-        this.resultdatalist = res;
-      }else {
-        console.log(res.status);
-      }
-      
-    })
-    console.log(this.resultdatalist)
-  }
+
 
 
   
